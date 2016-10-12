@@ -1,0 +1,2 @@
+npm uninstall webpack --save-dev 
+npm install webpack@2.1.0-beta.21 --save-dev
