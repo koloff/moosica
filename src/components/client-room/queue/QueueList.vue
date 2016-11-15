@@ -28,7 +28,7 @@
     },
 
     created() {
-      console.log(this.roomMusicState.queue);
+            console.log(this.roomMusicState.queue);
     }
   }
 </script>

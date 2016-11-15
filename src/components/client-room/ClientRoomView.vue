@@ -20,18 +20,6 @@
     </div>
 
 
-    <video-search-suggestion
-      v-for="video in videoSearchState.results"
-      :id="video.id"
-      :title="video.title"
-      :thumbnails="video.thumbnails"
-      :publishedAt="video.publishedAt"
-      :duration="video.duration"
-      :viewCount="video.viewCount"
-      :likeCount="video.likeCount"
-      :dislikeCount="video.dislikeCount"
-    ></video-search-suggestion>
-
 
     <!--<transition-->
       <!--name="custom-classes-transition"-->
@@ -39,6 +27,19 @@
       <!--leave-active-class="animated bounceOut">-->
       <div v-if="currentView === 'suggest-song'">
         <search-bar></search-bar>
+
+        <video-search-suggestion
+          v-for="video in videoSearchState.results"
+          :id="video.id"
+          :title="video.title"
+          :thumbnails="video.thumbnails"
+          :publishedAt="video.publishedAt"
+          :duration="video.duration"
+          :viewCount="video.viewCount"
+          :likeCount="video.likeCount"
+          :dislikeCount="video.dislikeCount"
+        ></video-search-suggestion>
+
       </div>
     <!--</transition>-->
 
@@ -87,15 +88,6 @@
       $('.suggest-songs-window').hide();
     },
     methods: {
-      openSuggestSongs() {
-        $('.suggest-songs-window').show();
-        $('.suggest-songs-window').animateCss('fadeIn');
-      },
-      openQueue() {
-        $('.queue-window').show();
-        $('.queue-window').animateCss('fadeIn');
-      },
-
       initVideo() {
         console.log('initvideo');
         // 3. This function creates an <iframe> (and YouTube player)

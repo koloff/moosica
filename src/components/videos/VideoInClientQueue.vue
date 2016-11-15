@@ -8,15 +8,21 @@
               <img class="img-responsive video-img" :src="thumbnailUrl"
                    :alt="title">
             </div>
-            <div style="border: 1px solid green" class="col-xs-8">
-              <h6 class="uk-panel-title">{{title}}</h6>
+            <div class="col-xs-6">
+              <h5 class="uk-panel-title">{{title}}</h5>
 
-              <h5>
-                <a href="#" class="uk-button uk-button-large uk-button-success">
-                  <i class="uk-icon-thumbs-up"></i> 0
+              <h6><strong>{{viewCount}}</strong> views | <b>{{duration | videoDuration}}</b></h6>
+
+              <div>
+                <a href="#" class="btn btn-success btn-sm">
+                  <i class="glyphicon glyphicon-thumbs-up"></i>
+                  Upvote
                 </a>
-                <b>{{viewCount}}</b> views | <b>{{duration | videoDuration}}</b></h5>
-
+              </div>
+            </div>
+            <div class="col-xs-2">
+              <h2>1</h2>
+              POSITION
             </div>
           </div>
         </div>
@@ -31,11 +37,11 @@
     props: ['title', 'thumbnailUrl', 'viewCount', 'duration'],
     mounted() {
 
-      console.log($('.img-col').find('.video-img')[0].clientWidth);
-      console.log($('.img-col'));
-      $('.img-col').css({
-        'width': $('.img-col').find('.video-img')[0].clientWidth + 'px'
-      })
+      //      console.log($('.img-col').find('.video-img')[0].clientWidth);
+      //      console.log($('.img-col'));
+      //      $('.img-col').css({
+      //        'width': $('.img-col').find('.video-img')[0].clientWidth + 'px'
+      //      })
     }
   }
 </script>

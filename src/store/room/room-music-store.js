@@ -21,6 +21,7 @@ export default class RoomMusicStore {
   initRepositoryListeners() {
 
     this.roomMusicRepository.on('added', async(snap) => {
+      console.log('added', snap);
       let videoDetails = await fetchVideoDetails(snap.value);
       if (videoDetails.items.length > 0) {
         this.state.queue.push(videoDetails.items[0]);

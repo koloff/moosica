@@ -1,30 +1,26 @@
 import request from 'superagent';
 import _ from 'lodash';
 
-// export function fetchVideoDetails(videoId) {
-//
-//   console.log(arguments);
-//   return new Promise((resolve, reject) => {
-//
-//     request
-//       .get('https://www.googleapis.com/youtube/v3/videos')
-//       .query({
-//         part: 'snippet, contentDetails, statistics',
-//         id: videoId,
-//         fields: `items(id, snippet(title, thumbnails), contentDetails/duration, statistics(viewCount, likeCount, dislikeCount))`,
-//         key: window.youTubeKey
-//       })
-//       .end((err, res) => {
-//         if (err) {
-//           return reject(err.body);
-//         }
-//
-//
-//         console.log(res.body);
-//         return resolve(res.body);
-//       })
-//   });
-// }
+export function fetchVideoDetails(id) {
+  return new Promise((resolve, reject) => {
+    request
+      .get('https://www.googleapis.com/youtube/v3/videos')
+      .query({
+        part: 'snippet, contentDetails,statistics',
+        id: id,
+        fields: `items(id, snippet(title, thumbnails), contentDetails/duration,statistics(viewCount,likeCount,dislikeCount))`,
+        key: window.youTubeKey
+      })
+      .end((err, res) => {
+        if (err) {
+          return reject(err);
+        }
+
+        console.log(res.body);
+        return resolve(res.body);
+      });
+  });
+}
 
 export class VideoSearch {
   constructor(query, countPerPage) {
@@ -45,7 +41,7 @@ export class VideoSearch {
         })
         .end((err, res) => {
           if (err) {
-            return reject(err.body);
+            return reject(err);
           }
 
           return resolve(res.body);
