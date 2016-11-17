@@ -2,12 +2,14 @@
   <div>
 
 
-    <div v-for="video in roomMusicState.queue">
+    <div v-for="obj in roomMusicState.queue">
       <video-in-client-queue
-        :title="video.snippet.title"
-        :thumbnailUrl="video.snippet.thumbnails.default.url"
-        :viewCount="video.statistics.viewCount"
-        :duration="video.contentDetails.duration"
+        :videoKey="obj.key"
+        :title="obj.video.snippet.title"
+        :thumbnailUrl="obj.video.snippet.thumbnails.default.url"
+        :viewCount="obj.video.statistics.viewCount"
+        :duration="obj.video.contentDetails.duration"
+        :votes="obj.votes"
       />
     </div>
 
@@ -28,7 +30,6 @@
     },
 
     created() {
-            console.log(this.roomMusicState.queue);
     }
   }
 </script>

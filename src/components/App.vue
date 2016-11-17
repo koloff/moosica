@@ -1,6 +1,7 @@
+<script src="../store/room/room-music-store.js"></script>
 <template>
   <div>
-    <h1>index</h1>
+    <h1>Moosica</h1>
   </div>
 </template>
 

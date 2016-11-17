@@ -1,13 +1,11 @@
 <template>
   <div>
-    <div class="row">
-      <div class="col-lg-6">
-        <div class="input-group">
-          <input @input="queryChanged" type="text" class="form-control" placeholder="Search...">
-          <span class="input-group-btn">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="input-group">
+        <input @input="queryChanged" type="text" class="form-control" placeholder="Search...">
+        <span class="input-group-btn">
         <button class="btn btn-default" type="button">Go!</button>
       </span>
-        </div>
       </div>
     </div>
   </div>

@@ -38,4 +38,3 @@ function getAuthorAndTitle(e) {
   }
 }
 
-console.log(getAuthorAndTitle('GALENA & FIKI - BOZHE, PROSTI / Галена и Фики - Боже, прости, 2014'));

@@ -10,7 +10,7 @@ import 'animate.css';
 import './utils/index';
 
 // load firebase
-import './config/firebase';
+require('./config/firebase');
 
 // YouTube repositories key
 window.youTubeKey = 'AIzaSyDikb5e3dv3mgc_FFOqCp9tmv3DTG4R2Gc';
@@ -33,44 +33,19 @@ import firebase from 'firebase';
 
 
 function seedFirebase() {
+  console.log(firebase.database() );
 
-  let db = firebase.database().roomRef();
+  let db = firebase.database().ref();
 
   db.set({
     rooms: {
-      testroom1: {
-        host: 'user2',
-        users: [
-          {
-            id: 'quest111',
-            roles: []
-          },
-          {
-            id: 'user2',
-            roles: ['host']
-          }
-        ],
-        music: {
-          currentlyPlaying: {
-            id: 'asdasdas',
-            duration: 243221,
-            currentMs: 12345,
-            loves: 3,
-          }
-        }
-      },
-    },
-    users: {
-      'quest111': {
-        username: 'Pesho111',
-        rooms: 'testroom1'
-      },
-      'user2': {
-        username: 'Vankataa',
-        rooms: 'testroom1'
+      'uchi-ban': {
+        songs: [
+          1,2,3
+        ]
       }
     }
-  })
+  }).then((err, res) => {console.log(arguments);})
 
 }
 

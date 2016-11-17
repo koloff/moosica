@@ -1,9 +1,10 @@
 import firebase from 'firebase';
 
-var config = {
-  apiKey: "AIzaSyDikb5e3dv3mgc_FFOqCp9tmv3DTG4R2Gc",
-  authDomain: "choose-fm.firebaseapp.com",
-  databaseURL: "https://choose-fm.firebaseio.com",
-  storageBucket: "choose-fm.appspot.com",
+let config = {
+  apiKey: "AIzaSyCDQswzRG0ScUr7lISOQxkO7_XfkNkr7JI",
+  authDomain: "moosica-97714.firebaseapp.com",
+  databaseURL: "https://moosica-97714.firebaseio.com",
+  storageBucket: "moosica-97714.appspot.com",
+  messagingSenderId: "161456361347"
 };
 firebase.initializeApp(config);

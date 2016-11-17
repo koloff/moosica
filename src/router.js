@@ -14,6 +14,9 @@ export default new VueRouter({
     },
     {
       path: '/:roomId', component: require('./components/client-room/ClientRoomView.vue')
+    },
+    {
+      path: '/:roomId/play', component: require('./components/play/PlayView.vue')
     }
   ]
 });

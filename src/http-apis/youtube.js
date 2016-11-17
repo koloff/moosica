@@ -16,7 +16,6 @@ export function fetchVideoDetails(id) {
           return reject(err);
         }
 
-        console.log(res.body);
         return resolve(res.body);
       });
   });
@@ -82,7 +81,6 @@ export class VideoSearch {
     let result = [];
     videoResults.items.forEach((item, index) => {
       let extendedDetailsVideo = _.extend(item, videosDetails.items[index]);
-      console.log(extendedDetailsVideo);
       result.push({
         id: extendedDetailsVideo.id,
         title: extendedDetailsVideo.snippet.title,
