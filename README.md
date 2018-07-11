@@ -1,6 +1,6 @@
-# {{ name }}
+# Moosica
 
-> {{ description }}
+> Social music listening
 
 ## Build Setup
 
